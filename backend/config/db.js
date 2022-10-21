@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import colors from "colors";
 
 const connectDB = async () => {
   try {
@@ -7,9 +8,9 @@ const connectDB = async () => {
       useNewUrlParser: true,
     });
 
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    console.log(`MongoDB Connected: ${conn.connection.host}`.magenta.bold);
   } catch (error) {
-    console.log(`ERROR: ${error.message}`);
+    console.log(`ERROR: ${error.message}`.red.underline);
     process.exit(1);
   }
 };
