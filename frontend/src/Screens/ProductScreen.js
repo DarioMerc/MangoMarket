@@ -15,10 +15,11 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Components/Loader";
 import Message from "../Components/Message";
 import { listProductDetails } from "../Actions/productAction";
+import CartScreen from "./CartScreen";
 
 const ProductScreen = () => {
   const id = useParams().id;
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const history = useNavigate();
 
   const dispatch = useDispatch();
@@ -87,7 +88,7 @@ const ProductScreen = () => {
                     <Row>
                       <Col>Qty</Col>
                       <Col>
-                        <Form.Control
+                        <Form.Select
                           as="select"
                           value={qty}
                           onChange={(e) => setQty(e.target.value)}
@@ -97,7 +98,7 @@ const ProductScreen = () => {
                               {x + 1}
                             </option>
                           ))}
-                        </Form.Control>
+                        </Form.Select>
                       </Col>
                     </Row>
                   </ListGroupItem>
