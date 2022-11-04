@@ -21,7 +21,7 @@ import { addToCart, removeFromCart } from "../Actions/cartAction";
 
 const CartScreen = () => {
   const productId = useParams().id;
-  const history = useNavigate();
+  const navigate = useNavigate();
   const [searchParms] = useSearchParams();
   const qty = Number(searchParms.get("qty"));
 
@@ -42,7 +42,7 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-    history("/login?redirect=shipping");
+    navigate("/login?redirect=shipping");
   };
 
   return (
