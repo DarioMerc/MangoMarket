@@ -28,9 +28,9 @@ const products = [
       "Also known as ‘egg of the sun’, or Taiyo-no-Tomago in Japanese, the first thing that strikes you about a Miyazaki mango is the large size – they weigh at least 350g. Or maybe it’s the color, which is a deep shade of rich red, bordering on purple, and invites their other nickname of ‘dragon’s eggs’. Aesthetically, they’re beautiful to look at – and once you cut into the skin, you’ll find an absurdly sweet and vivid yellow flesh that’s creamy, juicy, fragrant, and barely fibrous at all. A bite of this mango practically melts in the mouth! ",
     country: "Japan",
     price: 10000.0,
-    countInStock: 5,
-    rating: 3,
-    numReviews: 12,
+    countInStock: 3,
+    rating: 5,
+    numReviews: 1,
   },
   {
     name: "Francis",
@@ -159,9 +159,31 @@ const products = [
     description:
       "Arumanis mangoes have a vibrant green skin with large, light-yellow dots. The fruit maintains its green coloring even when ripe and is ready to eat right off the tree. Arumanis mangoes have an overall elongated and elliptical shape; they are slightly larger than palm-size and can weigh up to one pound.",
     country: "Indonesia",
-    price: 16.99,
+    price: 36.99,
     countInStock: 9,
     rating: 3,
+    numReviews: 1,
+  },
+  {
+    name: "Rainbow",
+    image: "/images/rainbow.jpg",
+    description:
+      "Rainbow mangoes are oblong and elongated with a slight curve at one end of the fruit, averaging 16-18 centimeters in length. The skin is smooth, thin, and multi-colored with patches of green, yellow, and red blushing when ripe. The flesh is buttery and golden yellow with one central, long, thin, flat seed.",
+    country: "Thailand",
+    price: 29.99,
+    countInStock: 9,
+    rating: 4,
+    numReviews: 3,
+  },
+  {
+    name: "Langra",
+    image: "/images/langra.jpg",
+    description:
+      "Available from May to August, color of the langra aam is greenish and its size varies from medium to large. The flesh is fiber-less, yellowish brown in color and has a strong smell when it ripens. As compared to other varieties of mangoes, it is naturally very sugary and soft.",
+    country: "India",
+    price: 14.99,
+    countInStock: 0,
+    rating: 3.5,
     numReviews: 1,
   },
   {
@@ -187,6 +209,17 @@ const products = [
     numReviews: 1,
   },
   {
+    name: "Horse",
+    image: "/images/horse.png",
+    description:
+      "Horse mangoes are medium to large in size, averaging 7-14 centimeters in diameter and are globular, oblong, to ovoid in shape. The smooth skin is approximately five millimeters thick and transforms from a solid yellow-green to a green base covered in brown lenticels and dark green spots. The skin may also be covered in a sticky sap that can be irritating to the skin. Underneath the matte skin, the yellow-orange flesh is juicy, fibrous, and contains a single cream-colored seed that is three centimeters in diameter and is enveloped in a brown, fibrous shell. Horse mangoes have a strong aroma and a slightly sour or bitter taste that is said to be similar to turpentine.",
+    country: "Thailand",
+    price: 24.99,
+    countInStock: 7,
+    rating: 2,
+    numReviews: 1,
+  },
+  {
     name: "Ivory",
     image: "/images/ivory.png",
     description:
@@ -194,6 +227,17 @@ const products = [
     country: "China",
     price: 29.99,
     countInStock: 14,
+    rating: 0,
+    numReviews: 0,
+  },
+  {
+    name: "Aiwen",
+    image: "/images/aiwen.png",
+    description:
+      "Aiwen mangoes have a long oval shape that becomes sharper near the crown of the fruit. The colour of the peel is like that of a red apple. The fruit flesh is fragrant, sweet and very juicy. With an outstanding quality and almost no fibers.",
+    country: "Thailand",
+    price: 31.99,
+    countInStock: 12,
     rating: 0,
     numReviews: 0,
   },

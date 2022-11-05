@@ -5,7 +5,6 @@ import {
   Button,
   FormGroup,
   FormLabel,
-  FormControl,
   FormCheck,
   Col,
 } from "react-bootstrap";
@@ -34,7 +33,7 @@ const PaymentScreen = () => {
   };
   return (
     <FormContainer>
-      <CheckoutSteps step1 step2 step3 />
+      <CheckoutSteps step1 step2 />
       <h1>Payment Method</h1>
       <Form onSubmit={submitHandler}>
         <FormGroup>
