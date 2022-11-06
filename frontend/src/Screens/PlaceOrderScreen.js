@@ -36,7 +36,7 @@ const PlaceOrderScreen = () => {
   ).toFixed(2);
 
   const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate; //ERROR COMING FROM HERE. INVESTIGATE
+  const { order, success, error } = orderCreate;
 
   useEffect(() => {
     if (success) {
