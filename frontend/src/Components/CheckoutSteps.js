@@ -5,8 +5,8 @@ import { NavLink } from "react-router-dom";
 
 const CheckoutSteps = (step1, step2, step3) => {
   return (
-    <Nav className="justify-content-center mb-4">
-      <NavItem>
+    <Nav className="justify-content-center">
+      <NavItem className="mx-2">
         {step1 ? (
           <LinkContainer to="/shipping">
             <NavLink>Shipping</NavLink>
@@ -15,7 +15,7 @@ const CheckoutSteps = (step1, step2, step3) => {
           <NavLink disabled>Shipping</NavLink>
         )}
       </NavItem>
-      <NavItem>
+      <NavItem className="mx-2">
         {step2 ? (
           <LinkContainer to="/payment">
             <NavLink>Payment</NavLink>
@@ -24,7 +24,7 @@ const CheckoutSteps = (step1, step2, step3) => {
           <NavLink disabled>Payment</NavLink>
         )}
       </NavItem>
-      <NavItem>
+      <NavItem className="mx-2">
         {step3 ? (
           <LinkContainer to="/placeorder">
             <NavLink>Place Order</NavLink>
