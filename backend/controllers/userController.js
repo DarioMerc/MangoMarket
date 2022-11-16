@@ -2,6 +2,14 @@ import asyncHandler from "express-async-handler"; //handles exceptions instead o
 import User from "../Models/userModel.js";
 import generateToken from "../utils/generateToken.js";
 
+// @desc Get users
+// @get GET /api/users
+// @access Private/Admin
+const getUsers = asyncHandler(async (req, res) => {
+  const users = await User.find({});
+  res.json(users);
+});
+
 // @desc Auth user & get token
 // @route POST /api/users/login
 // @access Public
@@ -103,4 +111,4 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-export { authUser, getUserProfile, registerUser, updateUserProfile };
+export { authUser, getUserProfile, registerUser, updateUserProfile, getUsers };

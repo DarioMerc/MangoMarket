@@ -8,12 +8,15 @@ import {
   FormGroup,
   FormLabel,
   FormControl,
+  Table,
 } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../Components/Message";
 import Loader from "../Components/Loader";
 import { getUserDetails, updateUserProfile } from "../Actions/userActions";
 import { USER_UPDATE_PROFILE_RESET } from "../Constants/userConstants";
+import { listMyOrders } from "../Actions/orderAction";
 
 const ProfileScreen = () => {
   const [name, setName] = useState("");
@@ -27,11 +30,16 @@ const ProfileScreen = () => {
 
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
+
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
   const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
   const { success } = userUpdateProfile;
-  console.log(user);
+
+  const orderList = useSelector((state) => state.orderList);
+  const { loading: loadingOrders, error: errorOrder, orders } = orderList;
+
   useEffect(() => {
     if (!userInfo) {
       history("/login");
@@ -39,6 +47,7 @@ const ProfileScreen = () => {
       if (!user.name || success) {
         dispatch({ type: USER_UPDATE_PROFILE_RESET });
         dispatch(getUserDetails("profile"));
+        dispatch(listMyOrders());
       } else {
         setName(user.name);
         setEmail(user.email);
@@ -100,11 +109,57 @@ const ProfileScreen = () => {
               onChange={(e) => setConfirmPassword(e.target.value)}
             ></FormControl>
           </FormGroup>
-          <Button type="submit">Update</Button>
+          <Button type="submit" className="mt-2">
+            Update
+          </Button>
         </Form>
       </Col>
       <Col md={9}>
         <h2>Orders</h2>
+        {loadingOrders ? (
+          <Loader />
+        ) : errorOrder ? (
+          <Message variant="danger">{errorOrder}</Message>
+        ) : (
+          <Table>
+            <thead>
+              <th>ID</th>
+              <th>DATE</th>
+              <th>TOTAL</th>
+              <th>PAID</th>
+              <th>DELIVERED</th>
+              <th></th>
+            </thead>
+            <tbody>
+              {orders.map((order) => (
+                <tr key={order._id}>
+                  <td>{order._id}</td>
+                  <td>{order.createdAt}</td>
+                  <td>{order.totalPrice}</td>
+                  <td>
+                    {order.isPaid ? (
+                      order.paidAt.substring(0, 10)
+                    ) : (
+                      <i className="fas fa-times" style={{ color: "red" }}></i>
+                    )}
+                  </td>
+                  <td>
+                    {order.isDelivered ? (
+                      order.deliveredAt.substring(0, 10)
+                    ) : (
+                      <i className="fas fa-times" style={{ color: "red" }}></i>
+                    )}
+                  </td>
+                  <td>
+                    <LinkContainer to={`/order/${order._id}`}>
+                      <Button>Details</Button>
+                    </LinkContainer>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        )}
       </Col>
     </Row>
   );
