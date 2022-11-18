@@ -1,4 +1,3 @@
-import { ErrorResponse } from "@remix-run/router";
 import axios from "axios";
 import {
   PRODUCT_LIST_REQUEST,

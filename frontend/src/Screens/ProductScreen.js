@@ -15,7 +15,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../Components/Loader";
 import Message from "../Components/Message";
 import { listProductDetails } from "../Actions/productAction";
-import CartScreen from "./CartScreen";
 
 const ProductScreen = () => {
   const id = useParams().id;
