@@ -5,6 +5,7 @@ import Product from "../Components/Product";
 import Message from "../Components/Message";
 import Loader from "../Components/Loader";
 import { listProducts } from "../Actions/productAction";
+import Jumbotron from "../Components/Jumbotron";
 const HomeScreen = () => {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
@@ -16,7 +17,8 @@ const HomeScreen = () => {
 
   return (
     <>
-      <h2>Latest Shipments</h2>
+      <Jumbotron />
+      <h2 className="pt-3 mb-0">Latest Shipments</h2>
       {loading ? (
         <Loader />
       ) : error ? (
