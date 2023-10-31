@@ -12,10 +12,12 @@ import ShippingScreen from "./Screens/ShippingScreen";
 import PaymentScreen from "./Screens/PaymentScreen";
 import PlaceOrderScreen from "./Screens/PlaceOrderScreen";
 import OrderScreen from "./Screens/OrderScreen";
+import ScrollToTopWrapper from "./Components/ScrollToTopWrapper";
 
 function App() {
   return (
     <Router>
+      <ScrollToTopWrapper />
       <Header />
       <main className="py-3">
         <Container>
