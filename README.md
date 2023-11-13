@@ -6,7 +6,6 @@ Made using React, Redux, NodeJs, Express, MongoDB and React Bootstrap (eventuall
 Deployed here: https://themangomarket.herokuapp.com/  
 ## TODO
 - pagination and filters
-- re-style (lots of padding and margin issues)
 - re-style entire site with tailwind (?)
-- contact us (?)
+- contact us page (?)
 - fake FAQ (?)
