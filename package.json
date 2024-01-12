@@ -1,7 +1,7 @@
 {
   "name": "mernecomm",
   "version": "1.0.0",
-  "description": "MERN Ecomm Project ",
+  "description": "MERN Ecomm site",
   "main": "server.js",
   "type": "module",
   "scripts": {
@@ -11,7 +11,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "deploy": "npm run build --prefix frontend"
+    "deploy": "npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Dario Mercuri",
   "license": "MIT",
